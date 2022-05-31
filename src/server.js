@@ -2,8 +2,8 @@ const express = require('express');
 require('dotenv').config();
 const app = require('./api');
 const routes = require('./routes');
-// const validateJWT = require('./middlewares/validateJWT');
 const middlewareError = require('./middlewares/Error');
+// const checksIfExists = require('./middlewares/checksIfExists');
 
 // não remova a variável `API_PORT` ou o `listen`
 const port = process.env.API_PORT || 3000;
