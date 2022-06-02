@@ -13,6 +13,16 @@ const create = async (req, res, next) => {
   }
 };
 
+const findAll = async (_req, res, next) => {
+  try {
+    const allUsers = await userService.findAll();
+    return res.status(200).json(allUsers);
+  } catch (err) {
+    next(err);
+  }
+};
+
 module.exports = {
   create,
+  findAll,
 };

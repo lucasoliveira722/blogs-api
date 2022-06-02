@@ -25,6 +25,12 @@ const create = async (newUser) => {
   return insertedUser;
 };
 
+const findAll = async () => {
+  const allUsers = await User.findAll({ attributes: { exclude: ['password'] } });
+  return allUsers;
+};
+
 module.exports = {
   create,
+  findAll,
 };

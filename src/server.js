@@ -3,7 +3,7 @@ require('dotenv').config();
 const app = require('./api');
 const routes = require('./routes');
 const middlewareError = require('./middlewares/Error');
-// const checksIfExists = require('./middlewares/checksIfExists');
+const validateJWT = require('./middlewares/validateJWT');
 
 // não remova a variável `API_PORT` ou o `listen`
 const port = process.env.API_PORT || 3000;
@@ -17,6 +17,7 @@ app.get('/', (_request, response) => {
 
 apiRoutes.post('/login', routes.login);
 apiRoutes.post('/user', routes.create);
+apiRoutes.get('/user', validateJWT, routes.findAll);
 
 app.use(apiRoutes);
 app.use(middlewareError);
