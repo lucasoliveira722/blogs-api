@@ -18,6 +18,7 @@ app.get('/', (_request, response) => {
 apiRoutes.post('/login', routes.login);
 apiRoutes.post('/user', routes.create);
 apiRoutes.get('/user', validateJWT, routes.findAll);
+apiRoutes.get('/user/:id', validateJWT, routes.findByPk);
 
 app.use(apiRoutes);
 app.use(middlewareError);
