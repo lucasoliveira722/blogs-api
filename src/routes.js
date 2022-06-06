@@ -1,6 +1,6 @@
 const login = require('./controllers/login');
 const { create, findAll, findByPk } = require('./controllers/userController');
-const { createCategory } = require('./controllers/categoryController');
+const { createCategory, findAllCategories } = require('./controllers/categoryController');
 
 module.exports = {
   login,
@@ -8,4 +8,5 @@ module.exports = {
   findAll,
   findByPk,
   createCategory,
+  findAllCategories,
 };

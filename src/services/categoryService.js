@@ -16,6 +16,12 @@ const create = async (newCategory) => {
   return createdCategory;
 };
 
+const findAll = async () => {
+  const allUsers = await Category.findAll({ attributes: { exclude: ['password'] } });
+  return allUsers;
+};
+
 module.exports = {
   create,
+  findAll,
 };
