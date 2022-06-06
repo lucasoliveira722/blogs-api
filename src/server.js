@@ -23,6 +23,8 @@ apiRoutes.get('/user/:id', validateJWT, routes.findByPk);
 apiRoutes.post('/categories', validateJWT, routes.createCategory);
 apiRoutes.get('/categories', validateJWT, routes.findAllCategories);
 
+apiRoutes.get('/post', validateJWT, routes.findAllPost);
+
 app.use(apiRoutes);
 app.use(middlewareError);
 
